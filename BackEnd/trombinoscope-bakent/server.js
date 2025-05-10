@@ -40,4 +40,4 @@ mongoose.connect('mongodb://localhost:27017/',{
     res.json(nouveauMembre);
   })
 
-//
+app.listen(3000,() => console.log("Serveur API sur http://localhost:3000"));
