@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
@@ -38,18 +39,14 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
   });
 
 
-  app.post('/Membres',async(req,res) =>{
+  app.post('/Membres/test',async(req,res) =>{
  
-       const nouveauMembre = await Membres({
-        nom : 'test',
-        prenom:'user',
-        mail: 'mail',
-        poste:'poste'
-       });
+       const nouveauMembre = new Membres(req.body)
     await nouveauMembre.save();
-    res.json(nouveauMembre);
+    //res.json(nouveauMembre);
+    res.send('nouveau membre ajouté')
   
    
   });
 
-app.listen(3000,() => console.log("Serveur API sur http://localhost:3000/Membres"));
+app.listen(3000,() => console.log("Serveur API: http://localhost:3000/Membres"));
