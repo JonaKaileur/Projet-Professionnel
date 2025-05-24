@@ -1,17 +1,19 @@
+import{Schema,model} from 'mongoose'
+
+
 export class Etudiant{
 
-    constructor(
-        public id: string,
-        public nom: string,
-        public prenom: string,
-        public promotion: string,
-        public telephone: string,
-        public email: string,
-        public dateNaissance: Date,
-        public imageurl: string,
 
-                
-        ){}             
+     etudientShema = new Schema({
+        id: String,
+        nom: String,
+        prenom: String,
+        promotion: String,
+        telephone: String,
+        mail: String,
+        dateNaissance: String,
+
+  });           
   
   }
 

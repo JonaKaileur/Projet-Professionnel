@@ -17,20 +17,22 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
   })
 
 
-  const membreShema = new mongoose.Schema({
+  const etudientShema = new mongoose.Schema({
     nom: String,
     prenom: String,
+    promotion: String,
+    telephone: String,
     mail: String,
-    poste: String,
+    dateNaissance: String,
 
   });
 
-  const Membres = mongoose.model('Membres',membreShema);
+  const Etudient = mongoose.model('etudient',etudientShemaShema);
 
-  app.get('/Membres',async(req,res) =>{
+  app.get('/Etudient',async(req,res) =>{
     try{
-      const membres = await Membres.find();
-      res.json(membres);
+      const etudient = await Etudient.find();
+      res.json(etudient);
     } catch (error){
       res.status(500).json({message: 'Erreur serveur'})
     }
@@ -39,14 +41,14 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
   });
 
 
-  app.post('/Membres/test',async(req,res) =>{
+  app.post('/Etudient/post',async(req,res) =>{
  
-       const nouveauMembre = new Membres(req.body)
-    await nouveauMembre.save();
-    //res.json(nouveauMembre);
-    res.send('nouveau membre ajouté')
+       const nouveauEtudient = new Etudient(req.body)
+    await nouveauEtudient.save();
+    //res.json(nouveauEtudient);
+    res.send('nouvelle étudient ajouté')
   
    
   });
 
-app.listen(3000,() => console.log("Serveur API: http://localhost:3000/Membres"));
+app.listen(3000,() => console.log("Serveur API: http://localhost:3000/Etudient"));
