@@ -1,10 +1,13 @@
 <div class="profil-container">
-  <img [src]="etudiant.imageurl || 'assets/default-avatar.png'" alt="Photo de {{ etudiant.nom }}" class="profil-photo">
+  <img [src]="etudiant?.imageurl || 'assets/default-avatar.png'" alt="Photo de {{ etudiant?.nom }}" class="profil-photo">
   
-  <h2>{{ etudiant.nom }} {{ etudiant.prenom }}</h2>
-  <p><strong>Promotion :</strong> {{ etudiant.promotion }}</p>
-  <p><strong>Email :</strong> {{ etudiant.email }}</p>
-  <p><strong>Téléphone :</strong> {{ etudiant.telephone }}</p>
+  <h2>{{ etudiant?.nom }} {{ etudiant?.prenom }}</h2>
+  <p><strong>Promotion :</strong> {{ etudiant?.promotion }}</p>
+  <p><strong>Email :</strong> {{ etudiant?.email }}</p>
+  <p><strong>Téléphone :</strong> {{ etudiant?.telephone }}</p>
   
   <button class="contact-btn">Contacter</button>
 </div>
+
+<!-- ? permet de d'accéder au propriétés de l'étudiant de manière sécurisée,  
+et ce même si l'étudiant n'est pas encore chargé donc undefined -->
