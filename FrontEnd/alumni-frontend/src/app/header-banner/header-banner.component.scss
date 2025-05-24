@@ -1,0 +1,23 @@
+.banner {
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%; /* Occupe toute la largeur */
+  padding: 40px; /* Réduction du padding pour éviter l'espace excessif */
+  background-color: #7a55a5;
+  color: white;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.site-name {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: bold; 
+}
+
+nav a{
+  color: white; 
+
+}

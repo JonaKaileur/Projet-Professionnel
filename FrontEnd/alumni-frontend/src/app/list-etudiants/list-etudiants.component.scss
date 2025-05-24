@@ -1,0 +1,8 @@
+.trombinoscope-container {
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de revenir à la ligne */
+    justify-content: center; /* Centre harmonieusement les éléments */
+    gap: 15px; /* Espacement uniforme entre les cartes */
+    padding: 15px;
+}

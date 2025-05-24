@@ -1,0 +1,8 @@
+
+<div class="etudiant-card" (click)="afficherProfil()">
+  <img [src]="etudiant.imageurl || 'assets/default-avatar.png'" alt="Photo de {{ etudiant.nom }}">
+  <h3>{{ etudiant.nom }} {{ etudiant.prenom }}</h3>
+  <p>Promotion : {{ etudiant.promotion }}</p>
+  <p>Email : {{ etudiant.email }}</p>
+</div>
+
