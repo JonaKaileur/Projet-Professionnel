@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Etudiant } from '../models/etudiant-model';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class EtudiantService {
-  private etudiants: Etudiant[] = [
-   //new Etudiant('3', 'Ogent', 'Ava', 'Promotion 2025', '0694123456', 'ava.ogent@example.com', new Date(2000, 0, 1), 'https://wallpapercave.com/wp/wp4878619.jpg')
-];
+  private etudiants:Observable<Etudiant[]> ;
   
   private apiURL = " http://localhost:3000/Etudient";
 
@@ -16,13 +17,19 @@ export class EtudiantService {
     return this.etudiants;
   }
 
+  
+  getEtudiantsMongos():Observable<Etudiant[]> {
+    return this.http.get<Etudiant[]>(this.apiURL);
+  }
+
   getEtudiantById(id: string): Etudiant | undefined {
     return this.etudiants.find(etudiant => etudiant.id === id);
   }
 
-  getEtudientApi(){
-    return this.http.get(this.apiURL);
+ getEtudiantByIdMongos(id: string):Observable<Etudiant>| undefined {
+    return this.http.get<Etudiant>('${this.apiURL}/${id}');
   }
+
   
   constructor(private http: HttpClient) { }
 }
