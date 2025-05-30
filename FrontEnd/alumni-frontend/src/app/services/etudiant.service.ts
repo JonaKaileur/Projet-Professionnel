@@ -9,23 +9,24 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EtudiantService {
-  private etudiants:Observable<Etudiant[]> ;
+  private etudiants !:Observable<Etudiant[]> ;
   
-  private apiURL = " http://localhost:3000/Etudient";
+  private apiURL = "http://localhost:3000";
 
+  /*
   getEtudiants(): Etudiant[] {
     return this.etudiants;
   }
-
+*/
   
   getEtudiantsMongos():Observable<Etudiant[]> {
     return this.http.get<Etudiant[]>(this.apiURL);
   }
-
+/*
   getEtudiantById(id: string): Etudiant | undefined {
     return this.etudiants.find(etudiant => etudiant.id === id);
   }
-
+*/
  getEtudiantByIdMongos(id: string):Observable<Etudiant>| undefined {
     return this.http.get<Etudiant>('${this.apiURL}/${id}');
   }

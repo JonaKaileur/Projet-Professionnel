@@ -17,6 +17,6 @@ export class ProfilEtudiantComponent {
 
   constructor(private route: ActivatedRoute, private etudiantService: EtudiantService) {
     this.etudiantId = this.route.snapshot.paramMap.get('id') || '';
-    this.etudiant = this.etudiantService.getEtudiantById(this.etudiantId);
+    //this.etudiant = this.etudiantService.getEtudiantById(this.etudiantId);
   }
 }

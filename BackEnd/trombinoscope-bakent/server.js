@@ -31,13 +31,17 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
 
   app.get('/Etudiant',async(req,res) =>{
     try{
-      const etudient = await Etudient.find();
-      res.json(etudient);
+      const etudiant = await Etudiant.find();
+      res.json(etudiant);
     } catch (error){
       res.status(500).json({message: 'Erreur serveur'});
     }
     
    
+  });
+
+  app.get('/', (req, res) => {
+  res.redirect('/Etudiant'); // ou /Etudiants selon ta config
   });
 
   app.get('/Etudiant/id',async(req,res) => {
@@ -63,4 +67,4 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
    
   });
 
-app.listen(3000,() => console.log("Serveur API: http://localhost:3000/Etudiant"));
+app.listen(3000,() => console.log("Serveur API: http://localhost:3000"));

@@ -6,7 +6,7 @@ import { ListEtudiantsComponent } from './list-etudiants/list-etudiants.componen
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ListEtudiantsComponent, EtudiantComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

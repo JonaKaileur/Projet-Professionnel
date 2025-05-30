@@ -17,6 +17,7 @@ import { Observable } from 'rxjs';
 export class EtudiantComponent {
   constructor(private router: Router) { }
   @Input() etudiant !:Observable<Etudiant> ;
+  @Input() tableau_etudiant ! : Observable<Etudiant[]>;
 
   donnerEtudient? : Etudiant; 
 
