@@ -1,8 +1,8 @@
 
 <div class="etudiant-card" (click)="afficherProfil()">
   <img [src]="( etudiant | async)?.imageurl || 'assets/default-avatar.png'" alt="Photo de {{ ( etudiant | async)?.nom }}">
-  <h3>{{( etudiant | async)?.nom }} {{ ( etudiant | async)?.prenom }}</h3>
-  <p>Promotion : {{ ( etudiant | async)?.promotion }}</p>
-  <p>Email : {{ ( etudiant | async)?.email }}</p>
+  <h3>{{ etudiant1.nom }} {{ etudiant1.prenom }}</h3>
+  <p>Promotion : {{  etudiant1.promotion }}</p>
+  <p>Email : {{  etudiant1.email }}</p>
 </div>
 

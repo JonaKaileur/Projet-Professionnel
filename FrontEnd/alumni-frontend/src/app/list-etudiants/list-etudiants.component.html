@@ -1,6 +1,6 @@
 
 <div class="trombinoscope-container" id="ListEtudiants">
-  @for (etudiant of (etudiantsMangos | async)  ; track etudiant) {
-    <app-etudiant [tableau_etudiant]="etudiantsMangos"></app-etudiant>
+  @for (etudiant of etudiants ; track etudiant) {
+    <app-etudiant [etudiant1]="etudiant"></app-etudiant>
   }
 </div>

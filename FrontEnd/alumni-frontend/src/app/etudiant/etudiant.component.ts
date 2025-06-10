@@ -17,16 +17,11 @@ import { Observable } from 'rxjs';
 export class EtudiantComponent {
   constructor(private router: Router) { }
   @Input() etudiant !:Observable<Etudiant> ;
-  @Input() tableau_etudiant ! : Observable<Etudiant[]>;
+  @Input() etudiant1 !:Etudiant ;
+  @Input() etudiant3 ! : Observable<Etudiant[]>;
 
   donnerEtudient? : Etudiant; 
-
-  ngOninit(){
-    this.etudiant.subscribe(data => {
-      this.donnerEtudient = data;
-    });
-
-  }
+  donnerEtudient2? : Etudiant[]; 
 
 
   afficherProfil() {

@@ -18,6 +18,7 @@ export class ListEtudiantsComponent implements OnInit {
   constructor(private etudiantService: EtudiantService) {}
 
   ngOnInit(): void {
-    this.etudiantsMangos = this.etudiantService.getEtudiantsMongos();
+    this.etudiantService.getEtudiantsMongos().subscribe(data => { this.etudiants = data; console.log(data);});
+
   }
 }
