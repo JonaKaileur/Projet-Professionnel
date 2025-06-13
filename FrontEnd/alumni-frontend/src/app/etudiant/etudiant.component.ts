@@ -25,6 +25,6 @@ export class EtudiantComponent {
 
 
   afficherProfil() {
-    this.router.navigate(['/etudiant', this.donnerEtudient?.id]); // Redirige vers le profil avec l'ID
+    this.router.navigate(['/etudiant', this.etudiant1._id]); // Redirige vers le profil avec l'ID
   }
 }
