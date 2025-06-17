@@ -10,15 +10,36 @@ import { Observable } from 'rxjs';
 export class PosteService {
 
   private apiURL = "http://localhost:3000/Post";
-  private mesPostes: Poste[] = [];
 
   getPostes():Observable<Poste[]> {
-      return this.http.get<Poste[]>(this.apiURL);
-    }
+    return this.http.get<Poste[]>(this.apiURL);
+  }
   
-getPosteById(id: string):Observable<Poste> {
+  getPosteById(id: string):Observable<Poste> {
     return this.http.get<Poste>(`${this.apiURL}/${id}`);
-  }
+  }
+
+  /*
+  async addPost(description: string, imageUrl: string) {
+    // Vérifie si l'utilisateur est authentifié
+    if (this.authService.id_user) {
+      const newItem: Maeev = { 
+        description: description,
+        imageurl: imageUrl,
+        name_user: this.authService.name_user_auth,  // Utiliser le nom de l'utilisateur authentifié
+        id: this.authService.id_user,  // Utiliser l'ID de l'utilisateur authentifié
+        nblike : 0
+      };
+      
+      const postsCollection = collection(db, 'post');
+      addDoc(postsCollection, newItem).then(async() => {
+        await this.loadMaeevs();  
+      });
+    } else {
+      console.error('Utilisateur non authentifié. Impossible d\'ajouter un maeev.');
+    }
+  }
+    */
 
   constructor(private http : HttpClient) { }
 }

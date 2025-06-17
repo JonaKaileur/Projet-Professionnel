@@ -7,6 +7,7 @@ export class Poste{
                 public imageurl: string,
                 public date: Date,
                 public link: string = '',
+                public valide: boolean = false,
                 public nblike: number = 0               
                 ){
                   

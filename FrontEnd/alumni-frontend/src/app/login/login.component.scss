@@ -1,0 +1,74 @@
+/* Applique à tout le corps de la page pour remplir la hauteur disponible */
+
+
+
+
+  
+  /* Conteneur principal pour centrer le contenu */
+  .container {
+    display: flex;
+    flex-direction: column; /* Organise les éléments verticalement */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    height: 100%; /* Prend toute la hauteur de la vue */
+  }
+  
+  /* Styles pour le formulaire */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espace entre les éléments du formulaire */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #9e85bb;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Largeur fixe pour le formulaire */
+  }
+  
+  /* Styles pour les champs d'entrée */
+  input {
+    padding: 10px;
+    border: 1px solid #8f8484;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Bouton de connexion */
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #357ab7;
+  }
+  
+  /* Titre de la section */
+  h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  .password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .password-toggle-icon i {
+    font-size: 18px;
+    line-height: 1;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+    margin-bottom: 20px;
+  }
+  
+  .password-toggle-icon i:hover {
+    color: #000;
+  }
