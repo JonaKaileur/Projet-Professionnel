@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { HeaderBannerComponent } from '../header-banner/header-banner.component';
 import { RouterOutlet } from '@angular/router';
-import { ListEtudiantsComponent } from "../list-etudiants/list-etudiants.component";
+import { ListPostsComponent } from "../list-posts/list-posts.component";
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet, ListEtudiantsComponent],
+  imports: [RouterOutlet,ListPostsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

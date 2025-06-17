@@ -19,7 +19,7 @@ export class PosteService {
   }
 
   getPosteById(id: string): Poste | undefined {
-    return this.postes.find(poste => poste.id === id);
+    return this.postes.find(poste => poste._id === id);
   }
   
 

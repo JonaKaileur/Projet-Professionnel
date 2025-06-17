@@ -17,6 +17,6 @@ export class PostComponent {
   constructor(private router: Router) { }
   @Input() post !: Poste ;
   afficherPost() {
-    this.router.navigate(['/post', this.post.id]); // Redirige vers le post avec l'ID
+    this.router.navigate(['/post', this.post._id]); // Redirige vers le post avec l'ID
   }
 }

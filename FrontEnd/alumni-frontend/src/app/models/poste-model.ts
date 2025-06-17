@@ -1,6 +1,6 @@
 export class Poste{
 
-    constructor(public id : string,
+    constructor(public _id : string,
                 public name_user: string, 
                 public titre: string,
                 public description: string,
