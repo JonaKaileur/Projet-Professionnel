@@ -18,10 +18,15 @@ export class ProfilPostComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private posteService: PosteService
-  ) {}
+  ) {
+
+  }
 
   ngOnInit(): void {
     this.posteId = this.route.snapshot.paramMap.get('id') || '';
-    this.post = this.posteService.getPosteById(this.posteId);
+    this.posteService.getPosteById(this.posteId).subscribe(data => {this.post = data;}
+
+
+    );
   }
 }

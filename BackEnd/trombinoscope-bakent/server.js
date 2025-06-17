@@ -27,7 +27,18 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
 
   });
 
+  const postShema = new mongoose.Schema({
+    name_user : String,
+    titre: String,
+    description : String,
+    imageurl: String,
+    date : Date,
+    link : String,
+    nblike: Number
+  })
+
   const Etudiant = mongoose.model('etudiant',etudiantShema);
+  const Post = mongoose.model('Post',postShema);
 
   app.get('/Etudiant',async(req,res) =>{
     try{
@@ -68,5 +79,38 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
   
    
   });
+
+  app.get('/Post',async(req,res) =>{
+    try{
+      const post = await Post.find();
+      res.json(post);
+    } catch (error){
+      res.status(500).json({message: 'Erreur serveur'});
+    }
+  });
+
+  app.get('/Post/:id',async(req,res) => {
+    try{
+      const post = await Post.findById(req.params.id);
+      console.log(post)
+      if(!post){
+        return res.status(404).json({message:'Post non trover !!!'});
+      }
+      res.json(post);   
+    }catch(error){
+      res.status(500).json({message: 'Erreur serveur',error});
+    }
+  });
+
+  app.post('/Post/post',async(req,res) =>{
+ 
+       const nouveauPost = new Post(req.body)
+    await nouveauPost.save();
+    //res.json(nouveauPost);
+    res.send('Post ajouté');
+  
+   
+  });
+
 
 app.listen(3000,() => console.log("Serveur API: http://localhost:3000"));
