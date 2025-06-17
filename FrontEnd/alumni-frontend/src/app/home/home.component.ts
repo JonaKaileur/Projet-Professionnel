@@ -6,7 +6,7 @@ import { ListEtudiantsComponent } from "../list-etudiants/list-etudiants.compone
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderBannerComponent, RouterOutlet, ListEtudiantsComponent],
+  imports: [RouterOutlet, ListEtudiantsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

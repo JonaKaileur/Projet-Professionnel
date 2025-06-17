@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { EtudiantComponent } from './etudiant/etudiant.component';
-import { ListEtudiantsComponent } from './list-etudiants/list-etudiants.component';
+import { HeaderBannerComponent } from "./header-banner/header-banner.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderBannerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
