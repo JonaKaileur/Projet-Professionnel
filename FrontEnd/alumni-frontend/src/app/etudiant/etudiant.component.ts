@@ -17,6 +17,6 @@ export class EtudiantComponent {
   constructor(private router: Router) { }
   @Input() etudiant !: Etudiant ;
   afficherProfil() {
-    this.router.navigate(['/etudiant', this.etudiant.id]); // Redirige vers le profil avec l'ID
+    this.router.navigate(['/etudiant', this.etudiant._id]); // Redirige vers le profil avec l'ID
   }
 }

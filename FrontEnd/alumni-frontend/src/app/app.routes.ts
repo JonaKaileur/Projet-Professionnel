@@ -6,7 +6,7 @@ import { ListPostsComponent } from './list-posts/list-posts.component';
 import { PostComponent } from './post/post.component';
 
 export const routes: Routes = [
-    {path:'', redirectTo:'/forum', pathMatch:'full'},
+    {path:'', redirectTo:'forum', pathMatch:'full'},
 
     { path: 'home', component: HomeComponent }, // Page d'accueil affichant la liste d'étudiants
     { path: 'trombinoscope', component: ListEtudiantsComponent }, // Page d'accueil affichant la liste d'étudiants

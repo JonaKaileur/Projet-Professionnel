@@ -1,7 +1,7 @@
 export class Etudiant{
 
     constructor(
-        public id: string,
+        public _id: string,
         public nom: string,
         public prenom: string,
         public promotion: string,

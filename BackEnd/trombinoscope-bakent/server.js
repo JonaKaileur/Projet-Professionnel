@@ -17,36 +17,56 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
   })
 
 
-  const membreShema = new mongoose.Schema({
+  const etudiantShema = new mongoose.Schema({
     nom: String,
     prenom: String,
+    promotion: String,
+    telephone: String,
     mail: String,
-    poste: String,
+    dateNaissance: String,
 
   });
 
-  const Membres = mongoose.model('Membres',membreShema);
+  const Etudiant = mongoose.model('etudiant',etudiantShema);
 
-  app.get('/Membres',async(req,res) =>{
+  app.get('/Etudiant',async(req,res) =>{
     try{
-      const membres = await Membres.find();
-      res.json(membres);
+      const etudiant = await Etudiant.find();
+      res.json(etudiant);
     } catch (error){
-      res.status(500).json({message: 'Erreur serveur'})
+      res.status(500).json({message: 'Erreur serveur'});
     }
     
    
   });
 
+  app.get('/', (req, res) => {
+  res.redirect('/Etudiant'); // ou /Etudiants selon ta config
+  });
 
-  app.post('/Membres/test',async(req,res) =>{
+
+  app.get('/Etudiant/:id',async(req,res) => {
+    try{
+      const etudiant = await Etudiant.findById(req.params.id);
+      console.log(etudiant)
+      if(!etudiant){
+        return res.status(404).json({message:'Etudiant non trover !!!'});
+      }
+      res.json(etudiant);   
+    }catch(error){
+      res.status(500).json({message: 'Erreur serveur',error});
+    }
+  });
+
+
+  app.post('/Etudiant/post',async(req,res) =>{
  
-       const nouveauMembre = new Membres(req.body)
-    await nouveauMembre.save();
-    //res.json(nouveauMembre);
-    res.send('nouveau membre ajouté')
+       const nouveauEtudiant = new Etudiant(req.body)
+    await nouveauEtudiant.save();
+    //res.json(nouveauEtudient);
+    res.send('nouvelle étudiant ajouté');
   
    
   });
 
-app.listen(3000,() => console.log("Serveur API: http://localhost:3000/Membres"));
+app.listen(3000,() => console.log("Serveur API: http://localhost:3000"));
