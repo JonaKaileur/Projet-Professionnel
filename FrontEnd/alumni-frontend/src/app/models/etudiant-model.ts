@@ -9,8 +9,6 @@ export class Etudiant{
         public email: string,
         public dateNaissance: Date,
         public imageurl: string,
-        
-
                 
         ){}             
   

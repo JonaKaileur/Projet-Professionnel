@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { AddPostComponent } from "../add-post/add-post.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [AddPostComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

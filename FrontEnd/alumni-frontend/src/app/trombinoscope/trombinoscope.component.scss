@@ -1,0 +1,9 @@
+
+.post-container {
+    margin-top: 0px;
+    display: flex;
+    flex-flow: row nowrap; /* Colonne pour les cartes */
+    align-items: center; /* Centre harmonieusement les éléments */
+    gap: 15px; /* Espacement uniforme entre les cartes */
+    padding: 15px;
+}

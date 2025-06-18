@@ -1,5 +1,40 @@
-<div class="trombinoscope-container" id="ListEtudiants">
-  @for (etudiant of etudiants; track etudiant) {
-    <app-etudiant [etudiant]="etudiant"></app-etudiant>
-  }
+<div class="trombinoscope-container">
+
+  <div class="search">
+    <input
+      type="text"
+      placeholder="Rechercher..."
+      (input)="onRechercheChange($event)"
+    />
+
+    <div class="filters">
+      <label>
+        <input type="checkbox" (change)="toggleChampRecherche('nom', $event)" checked />
+        Nom
+      </label>
+      <label>
+        <input type="checkbox" (change)="toggleChampRecherche('prenom', $event)" checked />
+        Prénom
+      </label>
+      <label>
+        <input type="checkbox" (change)="toggleChampRecherche('promotion', $event)" checked />
+        Promotion
+      </label>
+      <label>
+        <input type="checkbox" (change)="toggleChampRecherche('email', $event)" checked />
+        Email
+      </label>
+    </div>
+  </div>
+
+  <div class="listetudiant-container" id="ListEtudiants">
+    @if (etudiantsFiltres.length === 0) {
+      <p>Aucun étudiant trouvé</p>
+    } @else {
+      @for (etudiant of etudiantsFiltres; track etudiant._id) {
+        <app-etudiant [etudiant]="etudiant"></app-etudiant>
+      }
+    }
+  </div>
+
 </div>

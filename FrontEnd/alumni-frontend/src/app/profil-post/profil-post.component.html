@@ -1,7 +1,7 @@
 <div class="post-container">
   <h3>Posté par : {{ post?.name_user }}</h3>
   <h2>{{ post?.titre }}</h2>
-  <img [src]="post?.imageurl || 'assets/default-avatar.png'" alt="Photo de {{ post?.titre }}">
+  <img [src]="post?.imageurl || 'https://attackofthefanboy.com/wp-content/uploads/2021/11/Apex-Legends-Ash.jpg'" alt="Photo de {{ post?.titre }}">
   <p>{{ post?.description }}</p>
   <p><strong>Date de publication :</strong> {{ post?.date | date:'dd/MM/yyyy' }}</p>
 </div>
