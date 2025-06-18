@@ -1,6 +1,12 @@
 
 <form >
-    <h2>Ajouter un maeev</h2>
+    <h2>Ajouter un Poste</h2>
+    <div>
+        <label for="titre">Titre :</label>
+        <input type="text" id="titre" #titreInput />
+    </div>
+ 
+
     <div>
         <label for="description">Description :</label>
         <input type="text" id="description" #descriptionInput />
@@ -10,8 +16,8 @@
         <input type="text" id="imageurl" #imageurlInput />
     </div>
 
-    <!--<button type="button" (click)="addPost(descriptionInput.value,imageurlInput.value)">Add maeev</button>-->
-    <button type="button" >Add maeev</button>
+    <button type="button" (click)="addPost(titreInput.value,descriptionInput.value,imageurlInput.value)">Ajouter votre poste</button>
+    <!--<button type="button" >Add maeev</button>-->
 
 </form>
 

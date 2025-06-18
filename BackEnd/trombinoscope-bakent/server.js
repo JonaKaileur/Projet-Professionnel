@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -102,12 +103,15 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
     }
   });
 
-  app.post('/Post/post',async(req,res) =>{
+  app.post('/', (req, res) => {
+  res.redirect('/Post'); 
+  });
+  app.post('/Post',async(req,res) =>{
  
        const nouveauPost = new Post(req.body)
     await nouveauPost.save();
-    //res.json(nouveauPost);
-    res.send('Post ajouté');
+    res.json({message : "Post ajouté!!!"});
+    //res.send('Post ajouté');
   
    
   });

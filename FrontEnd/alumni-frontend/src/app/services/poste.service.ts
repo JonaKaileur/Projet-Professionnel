@@ -19,6 +19,11 @@ export class PosteService {
     return this.http.get<Poste>(`${this.apiURL}/${id}`);
   }
 
+
+  creePost(post : Poste): Observable<Poste>{
+    return this.http.post<Poste>('http://localhost:3000/Post',post);
+  }
+
   /*
   async addPost(description: string, imageUrl: string) {
     // Vérifie si l'utilisateur est authentifié
