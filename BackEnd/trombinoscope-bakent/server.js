@@ -115,6 +115,17 @@ mongoose.connect('mongodb://localhost:27017/Trombinoscope',{
   
    
   });
-
+app.put('/Post/:id', async(req,res) =>{
+   try{
+    const mise_a_jour = await Post.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+    {new : true});
+    res.json(mise_a_jour);
+   }catch (error) {
+      res.status(500).send(error)
+   }
+   
+   });
 
 app.listen(3000,() => console.log("Serveur API: http://localhost:3000"));

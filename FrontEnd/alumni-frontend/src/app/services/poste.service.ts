@@ -24,6 +24,10 @@ export class PosteService {
     return this.http.post<Poste>('http://localhost:3000/Post',post);
   }
 
+  maj_post(id: string, post: Poste): Observable<Poste>{
+    return this.http.put<Poste>('http://localhost:3000/Post',post);
+  }
+
   /*
   async addPost(description: string, imageUrl: string) {
     // Vérifie si l'utilisateur est authentifié
